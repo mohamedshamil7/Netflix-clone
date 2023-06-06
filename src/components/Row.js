@@ -6,6 +6,7 @@ import {MdChevronLeft,MdChevronRight} from 'react-icons/md'
 
 const Row = ({title,fetchUrl,rowId}) => {
     const [movies,setMovies] = useState([])
+   
 
 
     useEffect(()=>{
@@ -14,7 +15,6 @@ const Row = ({title,fetchUrl,rowId}) => {
             setMovies(response?.data.results)
         })
     },[fetchUrl])
-
     const slideLeft=()=>{
         var slider = document.getElementById('slider'+rowId)
         slider.scrollLeft = slider.scrollLeft -500
